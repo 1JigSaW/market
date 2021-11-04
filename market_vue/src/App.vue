@@ -107,8 +107,7 @@ export default {
 
 <style lang="scss">
 @import '../node_modules/bulma';
-
-lds-dual-ring {
+.lds-dual-ring {
   display: inline-block;
   width: 80px;
   height: 80px;
@@ -137,10 +136,8 @@ lds-dual-ring {
   overflow: hidden;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  
   &.is-loading {
     height: 80px;
   }
 }
-
 </style>

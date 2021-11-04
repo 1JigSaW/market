@@ -139,9 +139,13 @@ export default {
     },
     mounted() {
         document.title = 'Checkout | Djackets'
-
         this.cart = this.$store.state.cart
-        
+        if (this.cartTotalLength > 0) {
+            this.stripe = Stripe('pk_test_51Js55hI5y8UiTWUEpoiACKWjaWyOP1owVF4Eum2USCqrP0JuDZjATDirUgLcgbRnCIZn9ZaUvh23x68elgcEUEKC006seTEmyA')
+            const elements = this.stripe.elements();
+            this.card = elements.create('card', { hidePostalCode: true })
+            this.card.mount('#card-element')
+        }
     },
     methods: {
         getItemTotal(item) {

@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+STRIPE_SECRET_KEY = 'sk_test_51Js55hI5y8UiTWUEy4Q7kJfrxQP8FglFgU87ZW1Ah0L6QLkRRP0LRS36FeAh52Z6oHOkYpymK3b4Dtb9JDTZwnWP00wQ5bAYRk'
 
 # Application definition
 
@@ -42,11 +43,18 @@ INSTALLED_APPS = [
     'corsheaders',
     'djoser',
     'product', 
+    'order',
 ]
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8080",
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
