@@ -1,0 +1,6 @@
+[program:market]
+command = /bin/gunicorn_start
+user = jigsaw
+stdout_logfile = /logs/supervisor.log
+redirect_stderr = true
+environment=LANG=en_US.UTF-8,LC_ALL=en_US.UTF-8
